@@ -219,12 +219,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_scripts\Ball.cs" />
+    <Compile Include="Assets\_scripts\Ballextra.cs" />
+    <Compile Include="Assets\_scripts\Brick.cs" />
     <Compile Include="Assets\_scripts\LevelManager.cs" />
     <Compile Include="Assets\_scripts\LoseCollider.cs" />
     <Compile Include="Assets\_scripts\MusicPlayer.cs" />
     <Compile Include="Assets\_scripts\MusicPlayerPlus.cs" />
     <Compile Include="Assets\_scripts\Paddle.cs" />
-    <Compile Include="Assets\_scripts\PaddleORIG.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -13,7 +13,7 @@ public class MusicPlayerPlus : MonoBehaviour {
         Debug.Log("Music Player AWAKE!" + GetInstanceID());
         if (instance != null){
             Destroy(gameObject);
-            Debug.Log("Destroying the DUPLICATE." + GetInstanceID());
+           // Debug.Log("Destroying the DUPLICATE." + GetInstanceID());
         }
         
         else   {
@@ -24,7 +24,7 @@ public class MusicPlayerPlus : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("Music Player START!" + GetInstanceID());
+        //Debug.Log("Music Player START!" + GetInstanceID());
 	}
 	
 	// Update is called once per frame
