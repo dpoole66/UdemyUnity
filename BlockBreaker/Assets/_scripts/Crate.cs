@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brick : MonoBehaviour {
+public class Crate : MonoBehaviour {
 
-    //public AudioClip Boing;
-    public AudioClip Break;
+    public AudioClip crateHit;
     public Sprite[] hitSprites;
     public static int breakableCount = 0;
-    public bool isGrave;
-    public Tombstone tombstone;
+
+    public float force;
+   // public Rigidbody2D rb;
 
     private LevelManager levelManager;
 
@@ -18,60 +18,68 @@ public class Brick : MonoBehaviour {
     private bool isBreakable;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         isBreakable = (this.tag == "Breakable");
         // Tracking breakables 
-        if(isBreakable){
+        if (isBreakable)
+        {
             breakableCount++;
         }
 
         timesHit = 0;
         levelManager = GameObject.FindObjectOfType<LevelManager>();
-        tombstone = GameObject.FindObjectOfType<Tombstone>();
 
-
-    }
-
-    void Update() {
+       // rb = GetComponent<Rigidbody2D>();
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        AudioSource.PlayClipAtPoint(Break, transform.position);
-        if (isBreakable){
+    void Update()   {
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioSource.PlayClipAtPoint(crateHit, transform.position);
+        if (isBreakable)
+        {
             HandleHits();
         }
     }
 
-    void HandleHits ()  {
+    void HandleHits()
+    {
         timesHit++;
         // Declare and Assign maxHits here 
         int maxHits = hitSprites.Length + 1;
 
-        if (timesHit >= maxHits){
+        if (timesHit >= maxHits)
+        {
             breakableCount--;
             levelManager.BrickDestroyed();
             Destroy(gameObject);
-            if (isGrave){
-                tombstone.TombstoneDrop();
-            }
-            
+
+           // rb.AddForce(transform.up * force);
         }
 
-        else {
+        else
+        {
             LoadSprites();
         }
     }
 
     // Sprite Loader
-    void LoadSprites()  {
+    void LoadSprites()
+    {
         int spriteIndex = timesHit - 1;
-        if(hitSprites[spriteIndex]) { 
-        this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        if (hitSprites[spriteIndex])
+        {
+            this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
         }
     }
 
-    void SimulateWin(){
+    void SimulateWin()
+    {
         levelManager.LoadNextLevel();
     }
 }

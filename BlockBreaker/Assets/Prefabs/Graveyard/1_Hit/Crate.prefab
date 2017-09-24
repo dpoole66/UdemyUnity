@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4741667536870428}
   - component: {fileID: 212741365235980920}
   - component: {fileID: 61660137634155994}
-  - component: {fileID: 114292334105819938}
+  - component: {fileID: 114997796697773882}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Breakable
@@ -50,7 +50,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1652222976264098}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: fee2b484bdc57484492a6010910ac338, type: 2}
+  m_Material: {fileID: 6200000, guid: 45d52230bf0171744a00302b1f2d957f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.004717}
   m_EdgeRadius: 0
---- !u!114 &114292334105819938
+--- !u!114 &114997796697773882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,12 +75,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652222976264098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac103b00216130d4490fe147e8292a66, type: 3}
+  m_Script: {fileID: 11500000, guid: c5b0f27a8cde85a45a5190c109a900fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Break: {fileID: 8300000, guid: 7c9ec3c1e94c06f41b96380941a59b81, type: 3}
-  hitSprites:
-  - {fileID: 21300002, guid: f6318e8bf11a7314c8f0fdc042ca86c3, type: 3}
+  crateHit: {fileID: 8300000, guid: 0fcb527a7231a3f419baa3d689dce25e, type: 3}
+  hitSprites: []
+  force: 0
 --- !u!212 &212741365235980920
 SpriteRenderer:
   m_ObjectHideFlags: 1
