@@ -10,7 +10,6 @@ public class MusicPlayerPlus : MonoBehaviour {
 
     // Singlton Pattern
     void Awake()    {
-        Debug.Log("Music Player AWAKE!" + GetInstanceID());
         if (instance != null){
             Destroy(gameObject);
            // Debug.Log("Destroying the DUPLICATE." + GetInstanceID());

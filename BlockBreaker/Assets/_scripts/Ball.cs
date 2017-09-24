@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+    public AudioClip Boing;
     private Paddle paddle;
     private bool hasStarted = false;
     private Vector3 paddleToBallVector;
+    private Rigidbody2D ballRigidBody2D;
 
     // init with ball and paddle offset 
     void Start() {
         paddle = GameObject.FindObjectOfType<Paddle>();
         paddleToBallVector = this.transform.position - paddle.transform.position;
+        ballRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()   {
@@ -19,12 +22,21 @@ public class Ball : MonoBehaviour {
             this.transform.position = paddle.transform.position + paddleToBallVector;
 
             if (Input.GetMouseButtonDown(0))    {
-                Debug.Log("Launch Skull");
 
                 // Rigidbody2D differes from course "this.rigidbody2d.velocity" is obsolete.
                 hasStarted = true;
-                this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 15f);
+                this.ballRigidBody2D.velocity = new Vector2(1f, 15f);
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        Vector2 tweak = new Vector2 (Random.Range(0f, 0.9f), Random.Range(0f, 0.2f));
+        
+        if (hasStarted) {
+            AudioSource.PlayClipAtPoint(Boing, transform.position);
+
+            ballRigidBody2D.velocity += tweak;
         }
     }
 }
