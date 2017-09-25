@@ -4,10 +4,7 @@ using System.Collections;
 public class Paddle : MonoBehaviour {
 
     public bool autoPlay = false;
-    public AudioClip paddle;
     private Ball ball;
-    public float force;
-    public Rigidbody2D rb;
 
     float mousePosInBlocks;
 
@@ -19,6 +16,9 @@ public class Paddle : MonoBehaviour {
     void Update()   {
         if (!autoPlay) {
             MoveWithMouse();
+        }
+        else{
+            AutoPlay();
         }
     }
 
@@ -54,22 +54,4 @@ public class Paddle : MonoBehaviour {
 
         this.transform.position = paddlePos;
     }
-
-
-    //void OnCollisionEnter2D(Collision2D collision)  {
-    // AudioSource.PlayClipAtPoint(paddle, transform.position, 0.8f);
-    // }
-
-    void OnMouseDown()  {
-        AudioSource.PlayClipAtPoint(paddle, transform.position, 0.8f);
-
-        Vector3 paddlePosHit = new Vector3(0.5f, this.transform.position.y, 0f);
-        Vector3 hitDir = paddlePosHit = transform.position;
-    
-        rb.AddForce(hitDir * force);
-        Debug.Log("Slap");
-    }
-
-    
-
 }

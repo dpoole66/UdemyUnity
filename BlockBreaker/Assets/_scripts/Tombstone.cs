@@ -16,7 +16,6 @@ public class Tombstone : MonoBehaviour {
     void Start()
     {
         isToombstone = (this.tag == "Tombstone");
-
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
 
@@ -29,11 +28,13 @@ public class Tombstone : MonoBehaviour {
     }
 
     public void TombstoneDrop()    {
-        rb.isKinematic = false;
+        if (isToombstone)   {
+            rb.isKinematic = false;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)  {
-        AudioSource.PlayClipAtPoint(tombstone, transform.position);
+        AudioSource.PlayClipAtPoint(tombstone, transform.position, 1.5f);
         rb.isKinematic = false;
     }
 

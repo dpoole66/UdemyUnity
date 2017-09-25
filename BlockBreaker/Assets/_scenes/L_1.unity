@@ -242,6 +242,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 639fc1427a153f54386cc3112e183b7b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &99350747 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114149190451957592, guid: 9080082372f2f5a4c977757c91189393,
+    type: 2}
+  m_PrefabInternal: {fileID: 1791199776}
+  m_Script: {fileID: 11500000, guid: ac103b00216130d4490fe147e8292a66, type: 3}
 --- !u!4 &154003153 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4491290803156982, guid: 2b4a3aca27137924b94c6bf8fc29bb59,
@@ -307,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tombstone: {fileID: 8300000, guid: 7c9ec3c1e94c06f41b96380941a59b81, type: 3}
   rb: {fileID: 50293638164069896, guid: da94384b211172642a05c1cff1d7c222, type: 2}
+  grave: {fileID: 99350747}
 --- !u!1001 &211447889
 Prefab:
   m_ObjectHideFlags: 0
@@ -1051,6 +1058,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 82858376377882654, guid: 04b6e4d32831b8d46be43012067effdb,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b6e4d32831b8d46be43012067effdb, type: 2}
   m_IsPrefabParent: 0
@@ -1108,15 +1120,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 61225855983197246, guid: 8dd755de643919c4d8fdc38f734deb8c,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114104333938429730, guid: 8dd755de643919c4d8fdc38f734deb8c,
         type: 2}
-      propertyPath: autoPlay
-      value: 0
+      propertyPath: thrust
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dd755de643919c4d8fdc38f734deb8c, type: 2}
