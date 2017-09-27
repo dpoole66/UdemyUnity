@@ -29,7 +29,6 @@ public class Brick : MonoBehaviour {
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         tombstone = GameObject.FindObjectOfType<Tombstone>();
 
-
     }
 
     void Update() {
@@ -67,8 +66,8 @@ public class Brick : MonoBehaviour {
     void LoadSprites()  {
         int spriteIndex = timesHit - 1;
         if(hitSprites[spriteIndex]) { 
-        this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
-        }
+            this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        } 
     }
 
     void SimulateWin(){

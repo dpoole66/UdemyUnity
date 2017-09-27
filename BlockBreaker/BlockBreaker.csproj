@@ -223,6 +223,7 @@
     <Compile Include="Assets\_scripts\Ballextra.cs" />
     <Compile Include="Assets\_scripts\Brick.cs" />
     <Compile Include="Assets\_scripts\Crate.cs" />
+    <Compile Include="Assets\_scripts\Ghost.cs" />
     <Compile Include="Assets\_scripts\LevelManager.cs" />
     <Compile Include="Assets\_scripts\LoseCollider.cs" />
     <Compile Include="Assets\_scripts\MusicPlayer.cs" />

@@ -20,10 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4907211373914070}
   - component: {fileID: 212565917529844592}
-  - component: {fileID: 61225855983197246}
   - component: {fileID: 50440151642253098}
   - component: {fileID: 114104333938429730}
   - component: {fileID: 82867004030919384}
+  - component: {fileID: 60547535216452732}
+  - component: {fileID: 250550419549348562}
+  - component: {fileID: 61141982065549018}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -37,13 +39,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1031288463956678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.1564345, w: 0.98768836}
   m_LocalPosition: {x: 8, y: 1.21, z: -1.1}
   m_LocalScale: {x: 1, y: 1.0366796, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18}
 --- !u!50 &50440151642253098
 Rigidbody2D:
   serializedVersion: 4
@@ -64,8 +66,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!61 &61225855983197246
-BoxCollider2D:
+--- !u!60 &60547535216452732
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,7 +78,35 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.625}
+    newSize: {x: 1.19, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4317689, y: -0.04265474}
+      - {x: -0.2513243, y: 0.16452202}
+      - {x: -0.4418261, y: -0.075505435}
+      - {x: 0.41893724, y: -0.34102198}
+--- !u!61 &61141982065549018
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031288463956678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,8 +117,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.4}
-  m_EdgeRadius: 0.06
+  m_Size: {x: 1, y: 0.625}
+  m_EdgeRadius: 0
 --- !u!82 &82867004030919384
 AudioSource:
   m_ObjectHideFlags: 1
@@ -183,8 +213,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoPlay: 0
   paddle: {fileID: 8300000, guid: c362c03c5f99cfe4497dff894d7b4064, type: 3}
-  thrust: 33
+  force: 33
   rb: {fileID: 50440151642253098}
+  minX: 0.9
+  maxX: 15.1
 --- !u!212 &212565917529844592
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -220,8 +252,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a2b92ae1bb186e478b3881f83a2939f, type: 3}
-  m_Color: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 0.909}
-  m_FlipX: 0
+  m_Color: {r: 0.8308824, g: 0.8308824, b: 0.8308824, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.19, y: 0.41}
@@ -229,3 +261,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!250 &250550419549348562
+PointEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031288463956678}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceMagnitude: 44
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0

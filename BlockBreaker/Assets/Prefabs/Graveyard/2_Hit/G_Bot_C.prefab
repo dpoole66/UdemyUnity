@@ -82,6 +82,8 @@ MonoBehaviour:
   hitSprites:
   - {fileID: 21300014, guid: 8a9ed6fa00bce034caf691aa55c9f91f, type: 3}
   - {fileID: 21300014, guid: c43d10fd9f74ba44a83e68027de90f58, type: 3}
+  isGrave: 0
+  tombstone: {fileID: 0}
 --- !u!212 &212575490474998630
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,6 +8,8 @@ public class Paddle : MonoBehaviour {
     private Ball ball;
     public float force;
     public Rigidbody2D rb;
+    public float minX;
+    public float maxX;
 
     float mousePosInBlocks;
 
@@ -35,7 +37,7 @@ public class Paddle : MonoBehaviour {
         mousePosInBlocks = Input.mousePosition.x / Screen.width * 16;
 
         // Move Paddle to the balls position using the new "ballPos" vector
-        paddlePos.x = Mathf.Clamp(ballPos.x, 0.5f, 15.5f);
+        paddlePos.x = Mathf.Clamp(ballPos.x, minX, maxX);
 
         this.transform.position = paddlePos;
     }
@@ -50,7 +52,7 @@ public class Paddle : MonoBehaviour {
         mousePosInBlocks = Input.mousePosition.x / Screen.width * 16;
         //Debug.Log(mousePosInBlocks);
 
-        paddlePos.x = Mathf.Clamp(mousePosInBlocks, 0.5f, 15.5f);
+        paddlePos.x = Mathf.Clamp(mousePosInBlocks, minX, maxX);
 
         this.transform.position = paddlePos;
     }
