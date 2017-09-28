@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Position : MonoBehaviour {
+public class EnemyShipPosition : MonoBehaviour {
 
     // Use this for initialization
     void OnDrawGizmos() {

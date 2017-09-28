@@ -52,11 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a070476ed5c47f4ea20dd709975425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  enemyPrefab: {fileID: 1971290935963940, guid: 6d331691b5831f643bb43f00061d8a58,
+  playerSpeed: 5
+  playerWeapon: {fileID: 1123135444787450, guid: 3381b6ac5582a22429aa64ecc54f0685,
     type: 2}
-  projectile: {fileID: 1123135444787450, guid: 3381b6ac5582a22429aa64ecc54f0685, type: 2}
-  fireRate: 0.2
+  fireRate: 1
+  weaponSpeed: 13
 --- !u!212 &212671816165440404
 SpriteRenderer:
   m_ObjectHideFlags: 1

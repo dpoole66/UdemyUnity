@@ -6,9 +6,9 @@ public class Projectile : MonoBehaviour {
 
     public float damage = 100f;
 
- //   void OnTriggerEnter2D(Collider2D collider) {
- //       Destroy(collider.gameObject);
- //   }
+//    void OnTriggerEnter2D(Collider2D collider) {
+//        Destroy(this.gameObject);
+//    }
     
     public float GetDamage(){
         return damage;

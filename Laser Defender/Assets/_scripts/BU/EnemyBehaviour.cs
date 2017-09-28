@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour {
     
-    public GameObject playerOneWeapon;
+    public GameObject playerWeapon;
+    public float enemySpeed;
+    public GameObject enemyWeapon;
+    public float fireRate = 0.1f;
+    public float weaponSpeed;
     public float health = 500.0f;
     
     void OnStart() {
@@ -13,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider) {
        
-        Projectile myHit = playerOneWeapon.GetComponent<Projectile>();
+        Projectile myHit = playerWeapon.GetComponent<Projectile>();
 
 
         //Note, This is what I found worked on v.2017. Replaceing "Projectile missile =". 
@@ -26,7 +30,12 @@ public class EnemyBehaviour : MonoBehaviour {
             
         }
     }
-   
+
+    void FireController() {
+        GameObject lazer = Instantiate(enemyWeapon, transform.position, Quaternion.identity) as GameObject;
+        lazer.GetComponent<Rigidbody2D>().velocity = new Vector2(0, weaponSpeed);
+    }
+
 }
     
 

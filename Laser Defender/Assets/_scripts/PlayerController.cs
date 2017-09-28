@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour   {
 //    static MusicPlayer instance = null;
-    public float speed = 5.0f;
-    public GameObject enemyPrefab;
-    public GameObject projectile;
+//    public GameObject enemyShip;
+    public float playerSpeed = 5.0f;
+    public GameObject playerWeapon;
     public float fireRate = 0.1f;
     public float weaponSpeed = 13.0f;
     float xMin;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour   {
     }
 
     void Fire(){
-        GameObject lazer = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+        GameObject lazer = Instantiate(playerWeapon, transform.position, Quaternion.identity) as GameObject;
         lazer.GetComponent<Rigidbody2D>().velocity = new Vector2(0, weaponSpeed);
     }
 
@@ -35,10 +35,10 @@ public class PlayerController : MonoBehaviour   {
         }
 
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += Vector3.left * playerSpeed * Time.deltaTime;
         }
 		else if (Input.GetKey(KeyCode.RightArrow)){
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.position += Vector3.right * playerSpeed * Time.deltaTime;
         }
 
         float newX = Mathf.Clamp(transform.position.x, xMin, xMax);

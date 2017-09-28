@@ -20,12 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4122543491576884}
   - component: {fileID: 212173840346146212}
-  - component: {fileID: 114266708878011572}
   - component: {fileID: 61033331496319032}
   - component: {fileID: 50015586645560452}
-  - component: {fileID: 114048974368983004}
   - component: {fileID: 114186360154738040}
-  m_Layer: 0
+  - component: {fileID: 114960522355356100}
+  m_Layer: 9
   m_Name: EnemyOne
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -73,7 +72,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1971290935963940}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9edede32f5c07de4288418737f35de77, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -90,19 +89,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.84}
   m_EdgeRadius: 0
---- !u!114 &114048974368983004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971290935963940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d662c41927c586d4087c08facefcd78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerOneWeapon: {fileID: 1123135444787450, guid: 3381b6ac5582a22429aa64ecc54f0685,
-    type: 2}
 --- !u!114 &114186360154738040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
---- !u!114 &114266708878011572
+--- !u!114 &114960522355356100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,6 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce147ae6c2d46a4b9b582671278f0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerWeapon: {fileID: 1123135444787450, guid: 3381b6ac5582a22429aa64ecc54f0685,
+    type: 2}
+  enemyWeapon: {fileID: 1123135444787450, guid: 35b1797d4ff4ec04b805506821ac9057,
+    type: 2}
+  fireRate: 1
+  weaponSpeed: 8
+  health: 500
 --- !u!212 &212173840346146212
 SpriteRenderer:
   m_ObjectHideFlags: 1
