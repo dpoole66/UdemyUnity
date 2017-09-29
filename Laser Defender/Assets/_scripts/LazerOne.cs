@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class LazerOne : MonoBehaviour {
 
-    public float damage = 100f;
-    public int hits = 4;
+    public int damage = 100;
 
-    public float GetDamage() {
+    public int GetDamage() {
         return damage;
     }
 
-    public int Hits() {
-        return hits;
-    }
+
 }

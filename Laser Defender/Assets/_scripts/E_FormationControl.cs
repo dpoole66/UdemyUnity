@@ -9,6 +9,7 @@ public class E_FormationControl : MonoBehaviour {
     public float width = 16;
     public float height = 8;
     public float spawnDelay = 1.0f;
+    public AudioClip soundEnemySpawn;
 
     private float xMin;
     private float xMax;
@@ -76,7 +77,8 @@ public class E_FormationControl : MonoBehaviour {
 
         if(freePosition){ 
             GameObject enemies = Instantiate(enemyShip, freePosition.position, Quaternion.identity) as GameObject;
-            enemies.transform.parent = freePosition; 
+            enemies.transform.parent = freePosition;
+            AudioSource.PlayClipAtPoint(soundEnemySpawn, transform.position);
         }
 
         if(NextFreePosition()){

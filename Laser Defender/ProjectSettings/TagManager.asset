@@ -45,3 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: EnemyWeapons
+    uniqueID: 1061446449
+    locked: 0
+  - name: Enemy Ships
+    uniqueID: 439468985
+    locked: 0
+  - name: Player Weapons
+    uniqueID: 701049247
+    locked: 0
+  - name: Player Ship
+    uniqueID: 225168627
+    locked: 0

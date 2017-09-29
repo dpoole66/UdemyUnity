@@ -119,12 +119,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyWeapon: {fileID: 1123135444787450, guid: 35b1797d4ff4ec04b805506821ac9057,
     type: 2}
-  fireRate: 0.3
-  weaponSpeed: 8
+  fireRate: 1
+  weaponSpeed: 4
   health: 300
   scoreValue: 100
   playerWeapon: {fileID: 1123135444787450, guid: 3381b6ac5582a22429aa64ecc54f0685,
     type: 2}
+  soundEnemyLaser: {fileID: 8300000, guid: 31abc65610e0121438c344390451f40e, type: 3}
+  soundEnemyHit: {fileID: 8300000, guid: 7adf48ea11a2740459fc8d6989f218cd, type: 3}
+  soundEnemyDeath: {fileID: 8300000, guid: 8111fe10e1bc9bc4daa783777dfece56, type: 3}
 --- !u!212 &212173840346146212
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -156,8 +159,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 439468985
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eb8e446160e792c4ca08846d8719721a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
