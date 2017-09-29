@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212986103921201906}
   - component: {fileID: 50266030633654990}
   - component: {fileID: 61573879192122046}
-  - component: {fileID: 114978432113644618}
-  m_Layer: 0
+  - component: {fileID: 114918433945629374}
+  m_Layer: 10
   m_Name: BlueLazerOne
   m_TagString: Lazer
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.54}
   m_EdgeRadius: 0
---- !u!114 &114978432113644618
+--- !u!114 &114918433945629374
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,10 +96,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1123135444787450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f937d66d4b4864ea8cdb7143af1d6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 84fe5737c64c4394b9e2239c88311d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  hits: 4
 --- !u!212 &212986103921201906
 SpriteRenderer:
   m_ObjectHideFlags: 1

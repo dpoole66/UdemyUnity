@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour   {
-//    static MusicPlayer instance = null;
-//    public GameObject enemyShip;
-    public float playerSpeed = 5.0f;
+    //    static MusicPlayer instance = null;
+    //    public GameObject enemyShip;
+    public float playerSpeed;
     public GameObject playerWeapon;
-    public float fireRate = 0.1f;
-    public float weaponSpeed = 13.0f;
+    public float fireRate = 0.01f;
+    public float weaponSpeed = 3.0f;
+
+    public GameObject enemyWeapon;
+
+    public float health = 500.0f;
     float xMin;
     float xMax;
 
@@ -43,6 +47,24 @@ public class PlayerController : MonoBehaviour   {
 
         float newX = Mathf.Clamp(transform.position.x, xMin, xMax);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision) {
+
+        LazerOne enemyHit = enemyWeapon.GetComponent<LazerOne>();
+
+        Destroy(collision.gameObject);
+
+        //Note, This is what I found worked on v.2017. Replaceing "Projectile missile =". 
+        if (enemyHit) {
+            health -= enemyHit.GetComponent<LazerOne>().GetDamage();
+            Debug.Log("Player Health = " + health);
+            if (health <= 0) {
+                Destroy(gameObject);
+            }
+
+        }
     }
 
 }

@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-
+    public GameObject enemyWeapon;
+    public float fireRate = 2.0f;
+    public float weaponSpeed = 3.0f;
+    public float health = 500.0f;
+    public int scoreValue = 100;
     public GameObject playerWeapon;
 
-    public GameObject enemyWeapon;
-    public float fireRate = 0.01f;
-    public float weaponSpeed = 3.0f;
+    
 
-    public float health = 500.0f;
+    void Start(){
+        GameObject.Find("Score").GetComponent<ScoreKeeper>();
+    }
 
     void OnTriggerEnter2D(Collider2D collision) {
 
-        Projectile myHit = playerWeapon.GetComponent<Projectile>();
+        LazerOne myHit = playerWeapon.GetComponent<LazerOne>();
+        
+        Destroy(collision.gameObject);
+        
 
         
         //Note, This is what I found worked on v.2017. Replaceing "Projectile missile =". 
         if (myHit) {
-            health -= myHit.GetComponent<Projectile>().GetDamage();
-            Debug.Log(health);
+            health -= myHit.GetComponent<LazerOne>().GetDamage();
+            Debug.Log("Hit Enemy Health = " + health);
             if (health <= 0) {
                 Destroy(gameObject);
             }
@@ -35,13 +42,14 @@ public class EnemyController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.X)) {
-            InvokeRepeating("EnemyFire", 0.001f, fireRate);
+
+        float probability = Time.deltaTime * fireRate;
+
+        if (Random.value < probability) {
+            EnemyFire();
         }
 
-        if (Input.GetKeyUp(KeyCode.X)) {
-            CancelInvoke("EnemyFire");
-        }
+        
 
     }
 
