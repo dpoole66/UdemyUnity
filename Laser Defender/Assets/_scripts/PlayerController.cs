@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour   {
     public AudioClip soundPlayerHit;
     public AudioClip soundPlayerAlarm;
     public AudioClip soundPlayerOneDies;
+    public float countdown = 4.0f;
 
     public GameObject enemyWeapon;
 
@@ -88,8 +89,10 @@ public class PlayerController : MonoBehaviour   {
     void Die() {
         
         AudioSource.PlayClipAtPoint(soundPlayerOneDies, transform.position);
+        countdown -= Time.deltaTime;
         Destroy(gameObject);
-        Invoke("LoadLoose", delay);
+        LoadLose();
+   
     }
 
     void LoadLose() {
