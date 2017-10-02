@@ -222,7 +222,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\BU\MusicManagerBU.cs" />
     <Compile Include="Assets\_Scripts\LevelManager.cs" />
+    <Compile Include="Assets\_Scripts\MusicManager.cs" />
     <Compile Include="Assets\_Scripts\MusicPlayer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

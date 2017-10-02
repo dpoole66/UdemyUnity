@@ -7,8 +7,19 @@ public class LevelManager : MonoBehaviour {
     public float autoLoadNextLevelAfter;
     private int _activeSceneBuildIndex = 0;
 
+    public delegate void SceneChange(int level);
+    public static event SceneChange OnSceneChange;
+
     private void Start() {
-        Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        if (autoLoadNextLevelAfter == 0) {
+            Debug.Log("Level Auto Load disabled");
+        } else {
+            Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        }
+
+        if(OnSceneChange != null) {
+            OnSceneChange(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void Initialise() {

@@ -12,17 +12,29 @@ EditorBuildSettings:
     path: Assets/Scenes/01_Start.unity
     guid: f58f0bbd3f9004d43867eb3166e1ccf8
   - enabled: 1
+    path: Assets/Scenes/L1_Options.unity
+    guid: 9659e78d427c065419bac0b63dfbec45
+  - enabled: 1
+    path: Assets/Scenes/02_Level_1.unity
+    guid: cdfcc2b59fb2f4b4f9b20e9eed664864
+  - enabled: 1
+    path: Assets/Scenes/03_Lose.unity
+    guid: 23710d1682826e04aa34041b26c1719d
+  - enabled: 1
+    path: Assets/Scenes/03_Win.unity
+    guid: 02ba5a11573003a48b3de4e9c6515c11
+  - enabled: 0
     path: Assets/Scenes/02_Game_1.unity
     guid: c97ecb202023a8a4e9fe51cf549ff4d4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/03_Game_2.unity
     guid: 901dff437f997e945a359b5f7fc6bcd6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/04_Game_3.unity
     guid: 8b16b0bfb82f35f45902918a0ce08d5e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/05_Win.unity
     guid: 654d7bf26f6202345abdebede79c413d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/06_Lose.unity
     guid: 3b6617a3e7be45f46b6cbf1485fccf38
