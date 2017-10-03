@@ -223,9 +223,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\BU\MusicManagerBU.cs" />
+    <Compile Include="Assets\_Scripts\FadeController.cs" />
     <Compile Include="Assets\_Scripts\LevelManager.cs" />
     <Compile Include="Assets\_Scripts\MusicManager.cs" />
     <Compile Include="Assets\_Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\_Scripts\OptionsController.cs" />
+    <Compile Include="Assets\_Scripts\PlayerPrefsManager.cs" />
+    <Compile Include="Assets\_Scripts\Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
